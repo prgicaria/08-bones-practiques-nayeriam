@@ -1,0 +1,58 @@
+name: Autograding Tests
+'on':
+- push
+- repository_dispatch
+permissions:
+  checks: write
+  actions: read
+  contents: read
+jobs:
+  run-autograding-tests:
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-classroom[bot]'
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    - name: Linter
+      id: linter
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Linter
+        setup-command: python -m pip install flake8
+        command: flake8 bones_practiques.py
+        timeout: 10
+        max-score: 1
+    - name: Execucio
+      id: execucio
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: Execucio
+        setup-command: ''
+        command: python bones_practiques.py
+        input: |-
+          23
+          8
+        expected-output: |-
+          Divisió: 23/8
+          Quocient: 2
+          Residu: 7
+        comparison-method: contains
+        timeout: 10
+        max-score: 1
+    - name: Shebang
+      id: shebang
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Shebang
+        setup-command: ''
+        command: grep "#!/usr/bin/env python" bones_practiques.py
+        timeout: 10
+        max-score: 1
+    - name: Autograding Reporter
+      uses: classroom-resources/autograding-grading-reporter@v1
+      env:
+        LINTER_RESULTS: "${{steps.linter.outputs.result}}"
+        EXECUCIO_RESULTS: "${{steps.execucio.outputs.result}}"
+        SHEBANG_RESULTS: "${{steps.shebang.outputs.result}}"
+      with:
+        runners: linter,execucio,shebang
