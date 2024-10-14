@@ -18,7 +18,7 @@ jobs:
       uses: classroom-resources/autograding-command-grader@v1
       with:
         test-name: Linter
-        setup-command: python -m pip install flake8
+        setup-command: apt install flake8
         command: flake8 bones_practiques.py
         timeout: 10
         max-score: 1
