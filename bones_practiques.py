@@ -33,7 +33,7 @@ if divisor != 0:
 
     # Mostra dels resultats
     print("\n--- Resultats de la divisió ---")
-    print(f"Divisió: ({dividend}/{divisor})")
+    print(f"Divisió: {dividend}/{divisor}")
     print(f"Quocient: {quocient_sencer}")
     print(f"Residu: {residu}")
 else:
