@@ -6,19 +6,17 @@ Programa de divisió senzilla
 Institut Icària
 Programació - 1r Batxillerat - Curs 2023-24
 
-Aquest programa permet a l'usuari introduir dos nombres enters
-(dividend i divisor)
+Aquest programa permet a l'usuari introduir dos nombres enters (dividend i divisor)
 i calcula la divisió real, el quocient sencer i el residu.
 
 """
 __author__ = "Nayeri Anglada Monterrubio"
-__email__ = "nanglada@instituticaria.cat"
+__email__= "nanglada@instituticaria.cat"
 __date__ = "2024/10/14"
 
-# !/usr/bin/env python3
+#!/usr/bin/env python3
 
-# Programa per calcular la divisió, quocient sencer
-#  i residu de dos nombres enters
+# Programa per calcular la divisió, quocient sencer i residu de dos nombres enters
 
 # Entrada de dades: demana al usuari el dividend i divisor
 dividend = int(input("Introdueix el dividend (nombre enter): "))
@@ -30,7 +28,7 @@ if divisor != 0:
     divisio_real = dividend / divisor
     quocient_sencer = dividend // divisor
     residu = dividend % divisor
-
+    
     # Mostra dels resultats
     print("\n--- Resultats de la divisió ---")
     print(f"Divisió: ({dividend} / {divisor})")
