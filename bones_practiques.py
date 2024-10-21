@@ -8,7 +8,7 @@ Programació - 1r Batxillerat - Curs 2023-24
 
 Aquest programa permet a l'usuari introduir dos nombres enters
 (dividend i divisor)
-i calcula la divisió real, el quocient sencer i el residu.
+i calcular el quocient sencer i el residu.
 
 """
 __author__ = "Nayeri Anglada Monterrubio"
@@ -17,7 +17,7 @@ __date__ = "2024/10/14"
 
 # !/usr/bin/env python3
 
-# Programa per calcular la divisió, quocient sencer
+# Programa per calcular el quocient sencer
 #  i residu de dos nombres enters
 
 # Entrada de dades: demana al usuari el dividend i divisor
@@ -26,7 +26,7 @@ divisor = int(input("Introdueix el divisor (nombre enter): "))
 
 # Comprova que el divisor no sigui zero
 if divisor != 0:
-    # Càlculs de la divisió real, quocient sencer i residu
+    # Càlculs del quocient sencer i residu
     divisio_real = dividend/divisor
     quocient_sencer = dividend // divisor
     residu = dividend % divisor
