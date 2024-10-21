@@ -37,4 +37,4 @@ if divisor != 0:
     print(f"Quocient: {quocient_sencer}")
     print(f"Residu: {residu}")
 else:
-    print("\nError: El divisor no pot ser zero.")
+    print("Error: El divisor no pot ser zero.")
